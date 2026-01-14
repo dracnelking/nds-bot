@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot NDS Web</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #game-container {
+            width: 100%;
+            height: 100%;
+            display: flex; /* Asegura que el canvas se centre */
+        }
+        /* Esto nos servirá luego para ver logs en pantalla si queremos */
+        #status {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            padding: 5px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="status">Esperando carga...</div>
+    <div id="game-container"></div>
+
+    <script>
+        // --- CONFIGURACIÓN EMULATORJS ---
+        var EJS_player = '#game-container';
+        var EJS_core = 'nds'; 
+        var EJS_pathtodata = 'data/'; // Carpeta donde están los scripts del emulador
+        
+        // ¡CAMBIA ESTO POR EL NOMBRE DE TU ARCHIVO!
+        var EJS_gameUrl = 'roms/dia.nds'; 
+        
+        var EJS_startOnLoaded = true; // Iniciar automáticamente
+        var EJS_DEBUG_XX = true; // Ayuda a ver errores si los hay
+    </script>
+
+    <script src="data/loader.js"></script>
+
+</body>
+</html>
